@@ -65,8 +65,8 @@ jobs:
           push: false
           load: true
           context: .
-          build-args:
-            PYTHON_INTERPRETER: "3.13 3.13t 3.14 3.14t"
+          build-args: |
+            PYTHON_INTERPRETER=3.13 3.13t 3.14 3.14t
 
       - name: Copy wheels
         run: docker run --rm -v $(pwd)/distfiles:/tmp savant-rs cp -R /opt/dist /tmp
